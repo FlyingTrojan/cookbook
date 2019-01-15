@@ -1,0 +1,31 @@
+html{font-size: 20px;}
+
+/*header*/
+header{height: 2.5rem;}
+header{ background-color: #fff; position: relative;width: 100%;}
+header ul li { height: 50px; line-height: 50px; text-align: center; display: none; color: #323237; position: relative;font-size: 18px;  }
+header ul li.active{ display: block; }
+.header-left{position: absolute;left: .25rem;bottom: .5rem;width: 1.5rem;height: 1.5rem;}
+.search{position: absolute;bottom: 0.25rem;left: 2.5rem;height: 2rem;width: 80%;padding:.15rem 0.25rem .05rem 1.5rem;background: url(../image/search.png) .25rem center no-repeat #f2f2f2;background-size: 1rem 1rem;outline: none;}
+
+/*nav*/
+nav{position:relative;height: 2rem;line-height:2rem;text-align: center;width: 100%}
+nav ul{margin:0 1rem;}
+nav ul li{ font-size: 16px; float: left;display:block;width:3rem; color: #8a8a8a;}
+nav ul li.active{border-bottom: 2px solid #c40000;color: #515151;}
+
+
+/*main*/
+#main{}
+/*footer*/
+#footer{  background-color: #fff; }
+#footer ul li{  padding-top: 36px; padding-bottom: 4px; background: url() no-repeat center 8px; background-size: auto 25px; text-align: center; }
+#footer ul li.active{ color: #c40000; }
+#footer ul li:nth-child(1){ background-image: url(../image/home_nor.png); }
+#footer ul li:nth-child(2){ background-image: url(../image/collection_nor.png); }
+#footer ul li:nth-child(3){ background-image: url(../image/basket_nor.png); }
+#footer ul li:nth-child(4){ background-image: url(../image/mine_nor.png); }
+#footer ul li:nth-child(1).active{ background-image: url(../image/home_active.png); }
+#footer ul li:nth-child(2).active{ background-image: url(../image/collection_active.png); }
+#footer ul li:nth-child(3).active{ background-image: url(../image/basket_active.png); }
+#footer ul li:nth-child(4).active{ background-image: url(../image/mine_active.png); }

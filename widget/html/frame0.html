@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>云API</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+    <style>
+        .empty{ text-align: center; padding: 120px 0; }
+        ul li{height: 30px;line-height: 30px;background: yellow;}
+    </style>
+</head>
+<body>
+    <nav></nav>
+    <div class="index-page">
+      <ul>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li><li class="active"><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        <li><a href="javascript:;">家常菜</a></li>
+                        
+                    </ul>
+
+    </div>
+   
+    <script type="text/javascript" src="script/api.js"></script>
+    <script>
+        apiready = function(){
+            // 菜单导航栏
+            var navigationBar = api.require('navigationBar');
+            navigationBar.open({
+                y: 0,
+                w: api.frameWidth,
+                h: 42,
+                bg:"#fff",
+                // itemTextPaddingLR:5,
+                selectedLine:{
+                    color:"#c40000",
+                    width:3,
+                    marginLR:8
+                },
+
+                itemSize: {
+                    w: 60
+                },
+                items: [{
+                    title: '家常菜',
+                    bg: '#fff',
+                    bgSelected: '#fff'
+                }, {
+                    title: '荤菜',
+                    bg: '#fff',
+                    bgSelected: '#fff'
+                }, {
+                    title: '素菜',
+                    bg: '#fff',
+                    bgSelected: '#fff'
+                }],
+                font: {
+                    color: '#333',
+                    size:14,
+                    sizeSelected:14
+                },
+                fixedOn: api.frameName,
+                showScrollIndicator:true
+            }, function(ret, err) {
+                if (ret) {
+                    alert(JSON.stringify(ret));
+                } else {
+                    alert(JSON.stringify(err));
+                }
+            });
+        }
+            
+         
+        // apiready = function(){
+        //     var UIListGoods=api.require('UIListGoods');
+   
+        // }
+        
+        // UIListGoods.open({
+        //     rect: {
+        //         x: 0,
+        //         y: 0,
+        //         w: api.winWidth,
+        //         h: api.frameHeight
+        //     },
+        //     data: [{
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+        //     }, {
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+        //     }, {
+        //        imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+        //     }, {
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+
+        //     }, {
+        //        imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+
+        //     }, {
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+
+        //     }, {
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+
+        //     }, {
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+
+        //     }, {
+        //         imgPath: 'widget://res/img/apicloud.png',
+        //         goodsName: '洗衣机',
+        //         goodsMoney: 1999,
+        //         condition:'无货',
+
+        //     }, ],
+           
+        //     fixedOn: api.frameName
+        // }, function(ret, err) {
+        //     if (ret) {
+        //         alert(JSON.stringify(ret));
+        //     } else {
+        //         alert(JSON.stringify(err));
+        //     }
+        // });
+
+
+    </script>
+    
+</body>
+</html>

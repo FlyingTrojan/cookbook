@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>文档</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+    <style>
+        .empty{ text-align: center; padding: 120px 0; }
+    </style>
+</head>
+<body>
+    <div class="empty">wendang</div>
+    <script type="text/javascript" src="script/api.js"></script>
+    <script>
+        apiready = function(){
+            var personalCenter= api.require('personalCenter');
+            var btnArray=[
+                    {
+                        'bgImg': 'widget://res/personalCenter/personal_btn_nor.png',
+                        'selectedImg': 'widget://res/personalCenter/personal_btn_sele.png',
+                        'lightImg': 'widget://res/personalCenter/personal_btn_light.png',
+                        'title': '好友',
+                        'count': '5'
+                    },
+                    {
+                        'bgImg': 'widget://res/personalCenter/personal_btn_nor.png',
+                        'selectedImg': 'widget://res/personalCenter/personal_btn_sele.png',
+                        'lightImg': 'widget://res/personalCenter/personal_btn_light.png',
+                        'title': '回贴',
+                        'count': '240'
+                    },
+                    {
+                        'bgImg': 'widget://res/personalCenter/personal_btn_nor.png',
+                        'selectedImg': 'widget://res/personalCenter/personal_btn_sele.png',
+                        'lightImg': 'widget://res/personalCenter/personal_btn_light.png',
+                        'title': '主题',
+                        'count': '27'
+                    }
+                    ];
+            personalCenter.open({
+                'y': 0,
+                // 'imgPath': 'widget://res/personalCenter/d7d1d308fe165b984c09728e7118e9f1.jpg',
+                'imgPath': '../image/background.png',
+                'placeholderImg': 'widget://res/common/placeHolder.png',
+                'userName': '小猪仔',
+
+                'count':382,
+                'modButton': {
+                    'bgImg': 'widget://res/personalCenter/mod_normal.png',
+                    'lightImg': 'widget://res/personalCenter/mod_click.png'
+                },
+                fixedOn: api.frameName,
+                'btnArray': btnArray
+                
+            },function(ret,err){
+                // 头像修改按钮
+                if (btnArray.length===ret.click) {
+                        api.confirm({
+                        title:'聊天盒子',
+                        msg:'您想要从哪里选取图片',
+                        buttons:['拍照','相册','取消']
+                    },function(ret,err){
+                        var sourceType='album';
+                        if (3==ret.buttonIndex) {//取消
+                            return;
+                        }
+                        if (1==ret.buttonIndex) {//打开相机
+                            sourceType='camera';
+                        }
+                        api.getPicture({
+                            sourceType:sourceType,
+                            encodingType:'png',
+                            mediaValue:'pic'
+                        },function(ret,err){
+                            if(ret){
+                                personalCenter.updateValue({
+                                    imgPath: 'ret.data',
+                                   
+                                    count:382
+                                    
+                                });
+                            }
+                        });
+                    });
+                        return ;
+                    
+                
+                    
+                    
+                }
+            });
+
+        }
+            
+       
+    </script>
+</body>
+
+</html>
